@@ -1,0 +1,7 @@
+Cleaning up all *.sh.* files in /home/yuhang.jiang/Project...
+Cleanup completed! All *.sh.* files in /home/yuhang.jiang/Project have been removed.
+Cleaning up files in the following folders under /home/yuhang.jiang/Project: bin data logs
+Cleaning folder: /home/yuhang.jiang/Project/bin
+Cleaning folder: /home/yuhang.jiang/Project/data
+Cleaning folder: /home/yuhang.jiang/Project/logs
+Cleanup completed! All files in the specified folders have been removed.
