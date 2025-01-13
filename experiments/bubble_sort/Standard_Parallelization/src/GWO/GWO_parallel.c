@@ -28,8 +28,6 @@ int main(int argc, char *argv[])
         MPI_Abort(MPI_COMM_WORLD, -1);
     }
 
-    // e.g. g_pop_size = 200; g_max_iter = 500; or use defaults from GWO.h
-
     // Retrieve test function info
     TestFunctionInfo *info = get_test_function_info(test_function_name);
     if (!info) {
@@ -39,7 +37,6 @@ int main(int argc, char *argv[])
         MPI_Abort(MPI_COMM_WORLD, -1);
     }
 
-    // Each process uses a different seed (for reproducibility)
     srand(12345 + rank);
 
     // Define MPI_WOLF
@@ -136,7 +133,6 @@ int main(int argc, char *argv[])
 
     double start_time = MPI_Wtime();
 
-    // Set sync interval to 2 (only sync every 2 generations)
     int sync_interval = 1;
 
     for (int iter = 1; iter <= g_max_iter; iter++) {

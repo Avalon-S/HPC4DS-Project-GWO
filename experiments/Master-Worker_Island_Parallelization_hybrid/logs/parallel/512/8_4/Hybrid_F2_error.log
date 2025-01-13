@@ -1,7 +1,0 @@
-application called MPI_Abort(MPI_COMM_WORLD, -1) - process 2
-Usage: /home/yuhang.jiang/Project/bin/HGT_GWO_hybrid_512 <test_function_name> <dimension> <num_cores> <num_threads>
-application called MPI_Abort(MPI_COMM_WORLD, -1) - process 0
-application called MPI_Abort(MPI_COMM_WORLD, -1) - process 4
-application called MPI_Abort(MPI_COMM_WORLD, -1) - process 3
-application called MPI_Abort(MPI_COMM_WORLD, -1) - process 6
-application called MPI_Abort(MPI_COMM_WORLD, -1) - process 7

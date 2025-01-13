@@ -17,9 +17,6 @@ int main(int argc, char *argv[])
 
     srand(12345);
 
-    // g_pop_size = 200;
-    // g_max_iter = 500;
-
     // Retrieve test function info
     TestFunctionInfo *info = get_test_function_info(test_function_name);
     if (!info) {
@@ -120,7 +117,6 @@ int main(int argc, char *argv[])
                 alpha_history[iter - 1] = alpha.fitness;
             } else {
                 // If not iteration 1 but mod sync_interval=1 => skip update
-                // Just carry over the alpha fitness from previous iteration
                 alpha_history[iter - 1] = alpha_history[iter - 2];
             }
         }

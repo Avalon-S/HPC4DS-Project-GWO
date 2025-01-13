@@ -19,10 +19,6 @@ int main(int argc, char *argv[])
         exit(EXIT_FAILURE);
     }
 
-    // e.g. g_pop_size = 200;
-    //      g_max_iter = 500;
-    //      g_dimension = dim; g_pop_size, etc.
-
     // Allocate previous_best_pos / previous_positions
     previous_best_pos = (double *)malloc(dim * sizeof(double));
     if (!previous_best_pos) {
@@ -92,7 +88,6 @@ int main(int argc, char *argv[])
     double alpha_weight = 0.1; // α
     double beta_weight  = 0.1; // β
 
-    // We'll store alpha fitness in alpha_history
     double *alpha_history = (double *)malloc(g_max_iter * sizeof(double));
     if (!alpha_history) {
         fprintf(stderr, "Error: Failed to allocate memory for alpha_history.\n");
@@ -105,7 +100,6 @@ int main(int argc, char *argv[])
     clock_t start = clock();
     double io_time = 0.0;
 
-    // Introduce sync_interval = 2
     int sync_interval = 1;
 
     // Main iteration
@@ -116,7 +110,6 @@ int main(int argc, char *argv[])
             population[i].fitness = info->function(population[i].position, dim);
         }
 
-        // only do "sort + alpha/beta/delta + standard GWO update + HGT update" every sync_interval
         if (iter % sync_interval == 1) {
             // For iteration 1, do the full update:
             if (iter == 1) {

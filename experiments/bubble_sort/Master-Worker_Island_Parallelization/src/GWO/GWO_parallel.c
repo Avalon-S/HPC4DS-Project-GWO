@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
         MPI_Abort(MPI_COMM_WORLD, -1);
     }
 
-    srand(12345 + rank);  // Each process uses a different random seed
+    srand(12345 + rank); 
 
     // Define MPI_WOLF
     MPI_Datatype MPI_WOLF;

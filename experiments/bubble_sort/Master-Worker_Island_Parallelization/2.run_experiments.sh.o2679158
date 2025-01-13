@@ -1,0 +1,27 @@
+Running serial experiments...
+Submitting serial script for dimension: 256
+2679159.hpc-head-n1.unitn.it
+Submitting serial script for dimension: 512
+2679160.hpc-head-n1.unitn.it
+Submitting serial script for dimension: 1024
+2679161.hpc-head-n1.unitn.it
+Running parallel experiments...
+2679162.hpc-head-n1.unitn.it
+2679163.hpc-head-n1.unitn.it
+2679164.hpc-head-n1.unitn.it
+2679165.hpc-head-n1.unitn.it
+2679166.hpc-head-n1.unitn.it
+2679167.hpc-head-n1.unitn.it
+2679168.hpc-head-n1.unitn.it
+2679169.hpc-head-n1.unitn.it
+2679170.hpc-head-n1.unitn.it
+2679171.hpc-head-n1.unitn.it
+2679172.hpc-head-n1.unitn.it
+2679173.hpc-head-n1.unitn.it
+2679174.hpc-head-n1.unitn.it
+2679175.hpc-head-n1.unitn.it
+2679176.hpc-head-n1.unitn.it
+2679177.hpc-head-n1.unitn.it
+2679178.hpc-head-n1.unitn.it
+2679179.hpc-head-n1.unitn.it
+All experiments completed!

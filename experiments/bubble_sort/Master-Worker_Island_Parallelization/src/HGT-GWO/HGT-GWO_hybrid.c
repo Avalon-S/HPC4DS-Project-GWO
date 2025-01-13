@@ -305,7 +305,7 @@ int main(int argc, char *argv[])
     double end_time= MPI_Wtime();
     if(rank==0){
         double total_time= end_time - start_time;
-        double algorithm_time= total_time - io_time;
+        double algorithm_time= total_time;// - io_time;
 
         // Write performance log
         write_performance_log(performance_file, algorithm_time);

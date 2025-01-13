@@ -36,8 +36,6 @@ int main(int argc, char *argv[])
         MPI_Abort(MPI_COMM_WORLD,-1);
     }
 
-    // e.g. g_pop_size=200; g_max_iter=500; or use default in GWO.h
-
     // get test function info
     TestFunctionInfo *info= get_test_function_info(test_function_name);
     if(!info){
@@ -153,7 +151,6 @@ int main(int argc, char *argv[])
 
     double start_time= MPI_Wtime();
 
-    // sync_interval=2
     int sync_interval=1;
 
     // main GWO loop

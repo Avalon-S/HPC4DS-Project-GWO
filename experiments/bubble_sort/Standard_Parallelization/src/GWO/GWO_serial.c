@@ -17,9 +17,6 @@ int main(int argc, char *argv[])
 
     srand(12345);
 
-    // g_pop_size = 200;
-    // g_max_iter = 500;
-
     // Retrieve test function info
     TestFunctionInfo *info = get_test_function_info(test_function_name);
     if (!info) {
@@ -70,8 +67,6 @@ int main(int argc, char *argv[])
         exit(EXIT_FAILURE);
     }
 
-    // We introduce a sync_interval controlling how often (e.g., every 2 generations)
-    // we actually do the "sort + position updates."
     int sync_interval = 1;
 
     // Main GWO loop
@@ -83,8 +78,6 @@ int main(int argc, char *argv[])
         }
 
         if (iter % sync_interval == 1) {
-            // For the first iteration, or if we want to ensure alpha is defined,
-            // let's do the usual updates on iteration 1 as well:
             if (iter == 1) {
                 // Sort + alpha/beta/delta + position update
                 sort_population(population, g_pop_size);
@@ -122,7 +115,6 @@ int main(int argc, char *argv[])
                 alpha_history[iter - 1] = alpha.fitness;
             } else {
                 // If not iteration 1 but mod sync_interval=1 => skip update
-                // Just carry over the alpha fitness from previous iteration
                 alpha_history[iter - 1] = alpha_history[iter - 2];
             }
         }

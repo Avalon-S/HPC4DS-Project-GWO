@@ -41,10 +41,12 @@ for func_id in F1 F2 F3; do
         > "\$log_dir/\${func_id}_HGT_output.log" 2> "\$log_dir/\${func_id}_HGT_error.log"
 done
 EOF
-    echo "Generated: $output_dir/1_core.sh"
+
+    # Convert to Unix format
+    dos2unix "$output_dir/1_core.sh"
+    echo "Generated and converted to Unix: $output_dir/1_core.sh"
 }
 
-# Parallelization format
 generate_parallel_script() {
     local dim=$1
     local cores=$2
@@ -90,7 +92,10 @@ done
 
 echo "Completed parallel experiments for dimension: \$dim with \$cores cores."
 EOF
-    echo "Generated: $output_dir/${cores}_cores.sh"
+
+    # Convert to Unix format
+    dos2unix "$output_dir/${cores}_cores.sh"
+    echo "Generated and converted to Unix: $output_dir/${cores}_cores.sh"
 }
 
 # main function

@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
         MPI_Abort(MPI_COMM_WORLD, -1);
     }
 
-    srand(12345 + rank);  // Each process uses a different random seed
+    srand(12345 + rank); 
 
     // Define MPI_WOLF
     MPI_Datatype MPI_WOLF;
@@ -68,7 +68,7 @@ int main(int argc, char *argv[])
 
     // Global information only available at rank=0
     Wolf alpha, beta, delta;
-    // Used to record the fitness value of alpha at each generation, declared as double*
+    // Used to record the fitness value of alpha at each generation
     double *alpha_history = NULL;
 
     // Logging
@@ -140,7 +140,6 @@ int main(int argc, char *argv[])
 
     double start_time = MPI_Wtime();
 
-    // Synchronize information between processes every 100 iterations
     int sync_interval = 1;
 
     // rank=0 temporarily stores the top 3 elite wolves from all processes

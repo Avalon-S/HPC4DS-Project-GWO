@@ -136,8 +136,8 @@ int main(int argc, char *argv[])
     double start_time = MPI_Wtime();
     double io_time = 0.0;
 
-    // Synchronize every 100 iterations
     int sync_interval=1;
+    
     Wolf local_top3[3];
     Wolf *global_top3=NULL;
     if (rank == 0) {

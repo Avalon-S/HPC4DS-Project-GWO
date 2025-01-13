@@ -28,8 +28,6 @@ int main(int argc, char *argv[])
         MPI_Abort(MPI_COMM_WORLD, -1);
     }
 
-    // e.g. g_pop_size = 200; g_max_iter = 500; or use defaults from GWO.h
-
     // Retrieve test function info
     TestFunctionInfo *info = get_test_function_info(test_function_name);
     if (!info) {
@@ -45,7 +43,7 @@ int main(int argc, char *argv[])
     // Define MPI_WOLF
     MPI_Datatype MPI_WOLF;
     {
-        int block_lengths[2]      = {g_dimension, 1};
+        int block_lengths[2] = {g_dimension, 1};
         MPI_Aint displacements[2] = {
             offsetof(Wolf, position),
             offsetof(Wolf, fitness)
@@ -136,7 +134,6 @@ int main(int argc, char *argv[])
 
     double start_time = MPI_Wtime();
 
-    // Set sync interval to 2 (only sync every 2 generations)
     int sync_interval = 1;
 
     for (int iter = 1; iter <= g_max_iter; iter++) {
@@ -203,7 +200,7 @@ int main(int argc, char *argv[])
                          local_pop, local_size * sizeof(Wolf),
                          MPI_BYTE, 0, MPI_COMM_WORLD);
         } else {
-            // Non-sync iteration: rank 0 just records alpha if desired
+            // Non-sync iteration: rank 0 just records alpha
             if (rank == 0) {
                 alpha_history[iter - 1] = alpha.fitness;
             }

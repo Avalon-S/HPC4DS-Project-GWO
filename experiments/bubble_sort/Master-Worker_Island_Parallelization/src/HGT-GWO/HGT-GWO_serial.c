@@ -19,10 +19,6 @@ int main(int argc, char *argv[])
         exit(EXIT_FAILURE);
     }
 
-    // e.g. g_pop_size = 200;
-    //      g_max_iter = 500;
-    //      g_dimension = dim; g_pop_size, etc.
-
     // Allocate previous_best_pos / previous_positions
     previous_best_pos = (double *)malloc(dim * sizeof(double));
     if (!previous_best_pos) {
@@ -105,7 +101,6 @@ int main(int argc, char *argv[])
     clock_t start = clock();
     double io_time = 0.0;
 
-    // Introduce sync_interval = 1
     int sync_interval = 1;
 
     // Main iteration

@@ -160,4 +160,7 @@ qsub src/scripts/3.generate_scripts.sh # Generate scripts needed for 2.run_exper
 qsub src/scripts/4.del_tasks.sh # Query and delete tasks in the cluster (replace <user_id>)
 
 ```
+
+*If your scripts don't run, the reason should be line break format. Use `dos2unix xxx.sh` to convert.*
+
 [Back to Table of Contents](#table-of-contents)

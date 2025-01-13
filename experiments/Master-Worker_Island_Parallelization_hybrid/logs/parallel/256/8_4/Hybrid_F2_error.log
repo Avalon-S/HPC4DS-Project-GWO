@@ -1,3 +1,0 @@
-application called MPI_Abort(MPI_COMM_WORLD, -1) - process 6
-application called MPI_Abort(MPI_COMM_WORLD, -1) - process 2
-application called MPI_Abort(MPI_COMM_WORLD, -1) - process 5
