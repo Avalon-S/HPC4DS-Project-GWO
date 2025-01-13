@@ -115,11 +115,14 @@ The `experiments` folder contains:
 - `Standard_Parallelization_serial_mpi` version
 - `Standard_Parallelization_hybrid` version
 - `Master-Worker_Island_Parallelization_serial_mpi` version
-- `Master-Worker_Island_Parallelization_hybrid` version 
+- `Master-Worker_Island_Parallelization_hybrid` version
+
 **The above four use quick sort.**
 - `bubble_sort/Standard_Parallelization` version
-- `bubble_sort/Master-worker_Island_Parallelization` version 
+- `bubble_sort/Master-worker_Island_Parallelization` version
+
 **Prove that execution time is mainly affected by the sorting algorithm.**  
+
 The time complexity of **bubble sort** is \( O(n^2) \), and the time complexity of **quick sort** is \( O(n \log n) \) (close to \( O(n) \)). This is why when the population size is halved (\( n \to \frac{n}{2} \)), the speedup ratio of the parallel solution using bubble sort is approximately 4, while the speedup ratio of the parallel solution using quick sort is approximately 2.
 And this is why letting rank 0 sort the entire population results in almost the same serial and parallel run times. **Most of the time is spent on sorting.**
 
