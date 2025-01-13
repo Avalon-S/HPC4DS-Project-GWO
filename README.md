@@ -40,7 +40,7 @@
 
 ## Introduction
 
-This project is based on the **High Performance Computing for Data Science** course group project at the [University of Trento (UNITN)](https://www.unitn.it). The main theme is the parallelization of the Grey Wolf Optimizer (GWO). All instructions and codes in the project are designed for UNITN's [HPC cluster](https://servicedesk.unitn.it/sd/en/service/cluster-hpc?id=unitrento_v2_service_card&sys_id=7698d0fec35bfd104cbb7055df013118).
+This project is based on the **High Performance Computing for Data Science** course group project at the [University of Trento (UNITN)](https://www.unitn.it/en). The main theme is the parallelization of the Grey Wolf Optimizer (GWO). All instructions and codes in the project are designed for UNITN's [HPC cluster](https://servicedesk.unitn.it/sd/en/service/cluster-hpc?id=unitrento_v2_service_card&sys_id=7698d0fec35bfd104cbb7055df013118).
 
 ---
 
