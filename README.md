@@ -1,9 +1,10 @@
 # HPC4DS_Project_GWO
 
-<div style="text-align: center;">
+<div align="center">
   <img src="asset/logo.jpg" alt="logo" style="width:40%;"/>
   <p><em>The logo of this project.</em></p>
 </div>
+
 
 <div align="center">
     <table>
