@@ -32,7 +32,7 @@
 2. [Motivation](#motivation)
 3. [Contribution](#contribution)
 4. [Overview of Algorithms Ideas and Implementation](#overview-of-algorithms-ideas-and-implementation)
-5. [Experience Platform Introduction](#experience-platform-introduction)
+5. [Experiment Platform Introduction](#experiment-platform-introduction)
 6. [Usage](#usage)
 
 ---
@@ -102,7 +102,7 @@ This project is based on the **High Performance Computing for Data Science** cou
 
 ---
 
-## Experience Platform Introduction
+## Experiment Platform Introduction
 
 This repository contains the codes, scripts, and experimental results for GWO (serial, MPI, MPI+OpenMP) and HGT-GWO (serial, MPI, MPI+OpenMP). 
 The `experiments` folder contains:
