@@ -149,7 +149,7 @@ Due to time constraints, the framework code for running serial, MPI, and MPI+Ope
 
 ## Usage
 
-To avoid bugs caused by relative paths, this project uses absolute paths. Before using it, please rename the folder under `experiments`, `experiments/bubble_sort` you want to use to `Project`, and replace `yuhang.jiang` with your `<user_id>`.
+To avoid bugs caused by relative paths, this project uses absolute paths. Before using it, please rename the folder under `experiments`, `experiments/bubble_sort` to `Project`, and replace `yuhang.jiang` with your `<user_id>`.
 
 ```bash
 cd Project
