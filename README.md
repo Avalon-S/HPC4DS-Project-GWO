@@ -102,11 +102,7 @@ This project is based on the **High Performance Computing for Data Science** cou
 
 **Some faster methods**
 - Standard Parallelization: The master process only sends `alpha`, `beta`, and `delta` information back to each process, but the largest sorting overhead still occurs in the master process.
-<<<<<<< HEAD
-- Master-Slave Island Parallelization: Let each child process's local `alpha`, `beta`, and `delta` directly update its population individuals, which will converge faster (essentially independent GWO), but this will dilute the idea of ​​"Master-Slave" too much.
-=======
-- Master-worker Island Parallelization: Let each child process's local `alpha`, `beta`, and `delta` directly update its population individuals, which will converge faster (essentially independent GWO), but this will dilute the idea of ​​"Master-worker" too much.
->>>>>>> 93d6a59 (Update)
+- Master-worker Island Parallelization: Let each child process's local `alpha`, `beta`, and `delta` directly update its population individuals, which will converge faster (essentially independent GWO), but this will dilute the idea of "Master-worker" too much.
 
 [Back to Table of Contents](#table-of-contents)
 
