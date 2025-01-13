@@ -62,7 +62,7 @@ This project is based on the **High Performance Computing for Data Science** cou
    - Subpopulations operate independently, with `sync_interval` controlling the frequency of global synchronization.
    - Most of the sorting work is done on the worker processes, reducing communication and sorting overhead, and improving parallel efficiency.
 3. **Experimental validation**:
-   - HGT-GWO was first implemented in Python in October 2024 and demonstrated comprehensive superiority over GWO on 15 test functions.
+   - HGT-GWO was first implemented in Python in November 2024 and demonstrated comprehensive superiority over GWO on 15 test functions.
    - The parallelized code was implemented using C, MPI, and OpenMP.
 
 [Back to Table of Contents](#table-of-contents)
