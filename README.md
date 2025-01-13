@@ -79,9 +79,9 @@ This project is based on the **High Performance Computing for Data Science** cou
 | **Data Stored**           | Only the current positions and fitness of all individuals.                                         | Stores: 1) Global historical best position (`previous_best_pos`), 2) Previous generation positions (`previous_positions`). |
 | **Exploration vs Exploitation** | Balances exploration and exploitation purely based on `alpha`, `beta`, and `delta`.                 | Enhances exploitation by leveraging historical information and trend data, improving convergence.   |
 | **Convergence Speed**     | Moderate.                                                                                          | Faster due to history and trend-based refinement.                                                   |
-| **Execution Speed**       | Moderate, as sorting is the most time-consuming operation.                                         | Faster overall, as faster convergence reduces the number of iterations despite more operations per iteration. |
+| **Execution Speed**       | Moderate, as sorting is the most time-consuming operation.                                         | Faster overall, as faster convergence reduces the number of iterations despite more operations per iteration, reduces sorting time. |
 | **Avoiding Local Optima** | May struggle in multi-modal functions; prone to premature convergence.                             | Better at escaping local optima by utilizing historical and trend information.                      |
-| **Computational Overhead** | Lower, as it does not require additional historical data.                                          | Higher, due to the need for storing and processing historical positions and trends.                 |
+| **Computational Overhead** | Lower, as it does not require additional historical data.                                          | Moderate, due to the need for storing and processing historical positions and trends.                 |
 | **Application Scenarios** | Suitable for simpler or small-scale optimization problems.                                         | More suitable for complex, high-dimensional, and multi-modal optimization problems.                 |
 
 ---
@@ -99,6 +99,12 @@ This project is based on the **High Performance Computing for Data Science** cou
 |                       | - Gather the top 3 best individuals (`local_top3`) from each worker process (Gather) and combine them into global candidates (`global_top3`).    | - Select the top 3 best individuals from the subpopulation (`local_top3`) and send them to the master process (Gather). |
 |                       | - Sort the global best individuals (`global_top3`) and determine the global `alpha`, `beta`, `delta` wolves.                                     | - Receive the global best individuals (`alpha`, `beta`, `delta`) broadcasted by the master process (Broadcast). |
 |                       | - Broadcast the global top 3 individuals (`alpha`, `beta`, `delta`) to all worker processes (Broadcast) to ensure global consistency.            | - Use the broadcasted global best individuals to update the positions of the local population and start the next round of calculations. |
+
+**Some faster methods**
+- Standard Parallelization: The master process only sends `alpha`, `beta`, and `delta` information back to each process, but the largest sorting overhead still occurs in the master process.
+- Master-Slave Island Parallelization: Let each child process's local `alpha`, `beta`, and `delta` directly update its population individuals, which will converge faster (essentially independent GWO), but this will dilute the idea of ​​"Master-Slave" too much.
+
+[Back to Table of Contents](#table-of-contents)
 
 ---
 
