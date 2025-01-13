@@ -1,0 +1,14 @@
+Running: Compiling all GWO versions for all dimensions...
+Compiled binary for dim=256 at: /home/yuhang.jiang/Project/bin/GWO_serial_256
+Compiled binary for HGT-GWO dim=256 at: /home/yuhang.jiang/Project/bin/HGT_GWO_serial_256
+Compiled binary for dim=512 at: /home/yuhang.jiang/Project/bin/GWO_serial_512
+Compiled binary for HGT-GWO dim=512 at: /home/yuhang.jiang/Project/bin/HGT_GWO_serial_512
+Compiled binary for dim=1024 at: /home/yuhang.jiang/Project/bin/GWO_serial_1024
+Compiled binary for HGT-GWO dim=1024 at: /home/yuhang.jiang/Project/bin/HGT_GWO_serial_1024
+Compiled MPI binary for dim=256 at: /home/yuhang.jiang/Project/bin/GWO_parallel_256
+Compiled HGT-GWO MPI binary for dim=256 at: /home/yuhang.jiang/Project/bin/HGT_GWO_parallel_256
+Compiled MPI binary for dim=512 at: /home/yuhang.jiang/Project/bin/GWO_parallel_512
+Compiled HGT-GWO MPI binary for dim=512 at: /home/yuhang.jiang/Project/bin/HGT_GWO_parallel_512
+Compiled MPI binary for dim=1024 at: /home/yuhang.jiang/Project/bin/GWO_parallel_1024
+Compiled HGT-GWO MPI binary for dim=1024 at: /home/yuhang.jiang/Project/bin/HGT_GWO_parallel_1024
+All versions compiled successfully and stored in /home/yuhang.jiang/Project/bin.

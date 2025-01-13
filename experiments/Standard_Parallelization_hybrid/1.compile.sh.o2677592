@@ -1,0 +1,8 @@
+Running: Compiling all GWO versions for all dimensions...
+Compiled Hybrid binary for dim=256 at: /home/yuhang.jiang/Project/bin/GWO_hybrid_256
+Compiled HGT-GWO Hybrid binary for dim=256 at: /home/yuhang.jiang/Project/bin/HGT_GWO_hybrid_256
+Compiled Hybrid binary for dim=512 at: /home/yuhang.jiang/Project/bin/GWO_hybrid_512
+Compiled HGT-GWO Hybrid binary for dim=512 at: /home/yuhang.jiang/Project/bin/HGT_GWO_hybrid_512
+Compiled Hybrid binary for dim=1024 at: /home/yuhang.jiang/Project/bin/GWO_hybrid_1024
+Compiled HGT-GWO Hybrid binary for dim=1024 at: /home/yuhang.jiang/Project/bin/HGT_GWO_hybrid_1024
+All versions compiled successfully and stored in /home/yuhang.jiang/Project/bin.
