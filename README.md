@@ -57,7 +57,7 @@ This project is based on the **High Performance Computing for Data Science** cou
 1. **Proposed the HGT-GWO algorithm**:
    - Introduced global historical best positions and individual trend guidance (similar to velocity vectors).
    - Outperformed GWO on 3 test functions.
-2. **Proposed a master-slave island parallelization scheme**:
+2. **Proposed a master-worker island parallelization scheme**:
    - Subpopulations operate independently, with `sync_interval` controlling the frequency of global synchronization.
    - Most of the sorting work is done on the worker processes, reducing communication and sorting overhead, and improving parallel efficiency.
 3. **Experimental validation**:
@@ -95,14 +95,18 @@ This project is based on the **High Performance Computing for Data Science** cou
 |                       | - Gather the subpopulation results from all processes (Gather) and combine them into the complete population.                                    | - Send the calculated subpopulation back to the master process (Gather).                                   |
 |                       | - Sort the complete population, update `alpha`, `beta`, `delta`, and all individual positions.                                                  | - Wait for the updated subpopulation to be distributed, then receive it and begin the next round of fitness calculations. |
 |                       | - Redistribute the updated population's subgroups to worker processes, completing the synchronization of a new generation (Scatter).             |                                                                                                             |
-| **Master-Slave Island Parallelization**         | - Initialize the entire population (`population`) and distribute it to worker processes (Scatter).                                               | - Receive the distributed subpopulation (`local_pop`) and calculate the fitness of assigned individuals.    |
+| **Master-worker Island Parallelization**         | - Initialize the entire population (`population`) and distribute it to worker processes (Scatter).                                               | - Receive the distributed subpopulation (`local_pop`) and calculate the fitness of assigned individuals.    |
 |                       | - Gather the top 3 best individuals (`local_top3`) from each worker process (Gather) and combine them into global candidates (`global_top3`).    | - Select the top 3 best individuals from the subpopulation (`local_top3`) and send them to the master process (Gather). |
 |                       | - Sort the global best individuals (`global_top3`) and determine the global `alpha`, `beta`, `delta` wolves.                                     | - Receive the global best individuals (`alpha`, `beta`, `delta`) broadcasted by the master process (Broadcast). |
 |                       | - Broadcast the global top 3 individuals (`alpha`, `beta`, `delta`) to all worker processes (Broadcast) to ensure global consistency.            | - Use the broadcasted global best individuals to update the positions of the local population and start the next round of calculations. |
 
 **Some faster methods**
 - Standard Parallelization: The master process only sends `alpha`, `beta`, and `delta` information back to each process, but the largest sorting overhead still occurs in the master process.
+<<<<<<< HEAD
 - Master-Slave Island Parallelization: Let each child process's local `alpha`, `beta`, and `delta` directly update its population individuals, which will converge faster (essentially independent GWO), but this will dilute the idea of ​​"Master-Slave" too much.
+=======
+- Master-worker Island Parallelization: Let each child process's local `alpha`, `beta`, and `delta` directly update its population individuals, which will converge faster (essentially independent GWO), but this will dilute the idea of ​​"Master-worker" too much.
+>>>>>>> 93d6a59 (Update)
 
 [Back to Table of Contents](#table-of-contents)
 
@@ -112,13 +116,13 @@ This project is based on the **High Performance Computing for Data Science** cou
 
 This repository contains the codes, scripts, and experimental results for GWO (serial, MPI, MPI+OpenMP) and HGT-GWO (serial, MPI, MPI+OpenMP). 
 The `experiments` folder contains:
-- `GWO-serial_MPI` version
-- `HGT-GWO_serial_MPI` version
-- `GWO-hybrid` version
-- `HGT-GWO_hybrid` version 
+- `Standard_Parallelization_serial_mpi` version
+- `Standard_Parallelization_hybrid` version
+- `Master-Worker_Island_Parallelization_serial_mpi` version
+- `Master-Worker_Island_Parallelization_hybrid` version 
 **The above four use quick sort.**
 - `bubble_sort/Standard_Parallelization` version
-- `bubble_sort/Master-Slave_Island_Parallelization` version 
+- `bubble_sort/Master-worker_Island_Parallelization` version 
 **Prove that execution time is mainly affected by the sorting algorithm.**  
 The time complexity of **bubble sort** is \( O(n^2) \), and the time complexity of **quick sort** is \( O(n \log n) \) (close to \( O(n) \)). This is why when the population size is halved (\( n \to \frac{n}{2} \)), the speedup ratio of the parallel solution using bubble sort is approximately 4, while the speedup ratio of the parallel solution using quick sort is approximately 2.
 And this is why letting rank 0 sort the entire population results in almost the same serial and parallel run times. **Most of the time is spent on sorting.**
