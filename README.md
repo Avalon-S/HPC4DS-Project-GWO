@@ -142,6 +142,7 @@ Due to time constraints, the framework code for running serial, MPI, and MPI+Ope
 | Sorting Algorithms | Bubble sort, quick sort             |
 
 ### **Experimental Conclusion**
+- Please read the [report](docs/HPC_Project_Report.pdf)
 
 [Back to Table of Contents](#table-of-contents)
 
