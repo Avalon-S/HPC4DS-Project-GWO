@@ -5,6 +5,11 @@
   <p><em>The logo of this project.</em></p>
 </div>
 
+<div align="center">
+  <a href="docs/HPC_Project_Report.pdf"><strong>Report</strong></a><br>
+  <em><br></em>
+</div>
+
 
 <div align="center">
     <table>
