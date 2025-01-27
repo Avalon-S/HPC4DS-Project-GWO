@@ -40,6 +40,7 @@
 4. [Overview of Algorithms Ideas and Implementation](#overview-of-algorithms-ideas-and-implementation)
 5. [Experiment Platform Introduction](#experiment-platform-introduction)
 6. [Usage](#usage)
+7. [License](#license)
 
 ---
 
@@ -170,3 +171,11 @@ qsub src/scripts/4.del_tasks.sh # Query and delete tasks in the cluster (replace
 *If your scripts don't run, the reason should be line break format. Use `dos2unix xxx.sh` to convert.*
 
 [Back to Table of Contents](#table-of-contents)
+
+---
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
+
+---
